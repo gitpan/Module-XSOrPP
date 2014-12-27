@@ -1,14 +1,14 @@
 package Module::XSOrPP;
 
-our $DATE = '2014-12-05'; # DATE
-our $VERSION = '0.06'; # VERSION
+our $DATE = '2014-12-27'; # DATE
+our $VERSION = '0.07'; # VERSION
 
 use 5.010001;
 use strict;
 use warnings;
 
 use Dist::Util qw(packlist_for);
-use Module::Path qw(module_path);
+use Module::Path::More qw(module_path);
 
 require Exporter;
 our @ISA = qw(Exporter);
@@ -46,7 +46,7 @@ sub is_xs {
         return 0;
     }
 
-    $path = module_path($mod);
+    $path = module_path(module=>$mod);
     {
         last unless $path;
         local $/;
@@ -104,7 +104,7 @@ Module::XSOrPP - Determine if an installed module is XS or pure-perl
 
 =head1 VERSION
 
-This document describes version 0.06 of Module::XSOrPP (from Perl distribution Module-XSOrPP), released on 2014-12-05.
+This document describes version 0.07 of Module::XSOrPP (from Perl distribution Module-XSOrPP), released on 2014-12-27.
 
 =head1 SYNOPSIS
 
